@@ -77,3 +77,4 @@ pickle-email-*.html
 **.swp
 
 Gemfile.lock
+db/schema.rb
