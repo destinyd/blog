@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 gem 'rails', '3.2.8'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -15,3 +15,5 @@ gem "simple_form", ">= 2.0.4"
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "therubyracer", ">= 0.10.2", :group => :assets, :platform => :ruby
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+
+gem 'rails_kindeditor', '~> 0.3.0'
