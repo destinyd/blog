@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   acts_as_taggable
   scope :recent,order('id desc')
   scope :archives,recent.select([:title,:created_at,:permalink])
+  default_scope includes(:tags)
 
   def to_permalink
     "/blog/#{created_at.year}/#{created_at.month}/#{created_at.day}/#{permalink}"
