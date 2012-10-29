@@ -2,7 +2,7 @@
 <h1>Blog Archives</h1>
 </header>
 <dl class="archives">
-<% @posts.group{|post| post.created_at.year}.each do |year,posts| %>
+<% @posts.group_by{|post| post.created_at.year}.each do |year,posts| %>
   <dt>
     <%= year %>
   </dt>

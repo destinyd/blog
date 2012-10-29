@@ -1,2 +1,10 @@
-<%= link_to "DestinyD Blog", home_url(:subdomain => false), :class => 'brand' %>
-<%= link_to "Archives", blog_archives_url(:subdomain => false), :class => 'brand' %>
+<ul>
+  <li><%= link_to "Home", home_url(:subdomain => false), :class => 'brand' %></li>
+  <li><%= link_to "Archives", blog_archives_url(:subdomain => false), :class => 'brand' %></li>
+  <li>
+  <form action="http://google.com/search" method="get" target="_blank">
+    <input type="hidden" name="q" value="site:destinyd.tk">
+    <input type="text" name="q" class="search" placeholder="Search" x-webkit-speech="">
+  </form>
+  </li>
+</ul>
