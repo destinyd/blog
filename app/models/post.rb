@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  chinese_permalink :title#, :permalink_field => :url
+  #chinese_permalink :title#, :permalink_field => :url
   attr_accessible :body, :title, :tag_list
   #acts_as_commentable
   acts_as_taggable
@@ -21,5 +21,9 @@ class Post < ActiveRecord::Base
 
   def to_permalink
     "/blog/#{created_at.year}/#{created_at.month}/#{created_at.day}/#{permalink}"
+  end
+  
+  before_save do
+    self.permalink = PinYin.permlink(title) if title_changed?
   end
 end
