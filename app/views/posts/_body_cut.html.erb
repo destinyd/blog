@@ -3,6 +3,6 @@
 </div>
 <% if need_continue? post.body %>
 <footer class="align-r">
-  <%= link_to '继续阅读 →',post %>
+  <%= link_to '继续阅读 →',post.to_permalink %>
 </footer>
 <% end %>

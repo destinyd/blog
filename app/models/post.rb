@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
   acts_as_taggable
   scope :recent,order('id desc')
   scope :archives,recent.select([:title,:created_at,:permalink])
+  validates :title,:permalink, presence: true, uniqueness: true
+  validates :body, presence: true
   default_scope includes(:tags)
 
   def to_s
@@ -23,7 +25,7 @@ class Post < ActiveRecord::Base
     "/blog/#{created_at.year}/#{created_at.month}/#{created_at.day}/#{permalink}"
   end
   
-  before_save do
+  before_validation do
     self.permalink = PinYin.permlink(title) if title_changed?
   end
 end
