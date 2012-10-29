@@ -6,6 +6,7 @@
   <%= raw @post.body %>
 </div>
 <footer>
+<%= render "posts/comments",post:@post %>
       <p class="meta neighbor clearfix">
         <%= link_to '« ' + @post.prev.to_s,@post.prev.to_permalink,class: 'float-l',title:@post.prev if @post.prev %>
         <%= link_to @post.next.to_s + ' »',@post.next.to_permalink,class: 'float-r',title:@post.next if @post.next %>
