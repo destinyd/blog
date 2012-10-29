@@ -1,3 +1,8 @@
 <div class="entry-content typo">
   <%= raw truncate_html(post.body) %>
 </div>
+<% if need_continue? post.body %>
+<footer class="align-r">
+  <%= link_to '继续阅读 →',post %>
+</footer>
+<% end %>

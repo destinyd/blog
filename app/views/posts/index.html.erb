@@ -5,9 +5,9 @@
 <% @posts.each do |post| %>
   <article>
     <%= render "posts/head",post:post %>
+    <%= render "posts/body_cut",post:post %>
   </article>
-  <%= render "posts/body_cut",post:post %>
 <% end -%>
-<nav>
+<nav class="align-r">
 <%= will_paginate(@posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
 </nav>
