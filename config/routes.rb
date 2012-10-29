@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  get "about" => 'home#about',as: :about
+
   constraints :subdomain => "admin",as: :admin do
     #namespace :admin do
       resources :posts, :module => "admin"
