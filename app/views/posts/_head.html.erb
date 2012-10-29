@@ -1,0 +1,11 @@
+<h1 class="entry-title">
+  <%= link_to post.title,post.to_permalink %>
+</h1>
+<p class="meta">
+<time datetime="<%= post.created_at %>" pubdate="pubdate" data-updated="true"><%= post.created_at.to_s(:short) %></time>
+<span class="tags">
+  <% post.tags.each do |tag| %>
+    <a class="category" href="/blog/categories/<%= tag %>"><%= tag %></a>
+  <% end -%>
+</span>
+</p>

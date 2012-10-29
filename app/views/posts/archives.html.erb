@@ -8,13 +8,7 @@
   </dt>
   <% posts.each do |post| %>
     <dd>
-      <h2 class="entry-title"><%= link_to post.title,post %></h2>
-      <p class="meta">
-      <time datetime="<%= post.created_at %>" pubdate="pubdate" data-updated="true"><%= post.created_at.to_short %></time>
-      <span class="tags">
-          Categories: <a class="category" href="/blog/categories/mountain-lion/">Mountain Lion</a>, <a class="category" href="/blog/categories/xcode/">Xcode</a>
-      </span>
-      </p>
+    <%= render "posts/head",post:post %>
     </dd>
   <% end -%>
 <% end -%>

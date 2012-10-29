@@ -1,0 +1,19 @@
+<h1 class="entry-title">
+  <%= link_to post.title,post.to_permalink %>
+</h1>
+<p class="meta">
+<time datetime="<%= post.created_at %>" pubdate="pubdate" data-updated="true"><%= post.created_at.to_s(:short) %></time>
+<span class="tags">
+  <% post.tags.each do |tag| %>
+    <a class="category" href="/blog/categories/<%= tag %>"><%= tag %></a>
+  <% end -%>
+</span>
+<%#<span class="share-to-weibo">%>
+  <%#<a href="javascript:void(0)" onclick="window.open('http://service.weibo.com/share/share.php?appkey=&amp;ralateUid=2026895955&amp;title=Fix Compile Problem Based on Mountain Lion and Xcode 4.4 - &amp;url=http://hansay.com/2012/08/02/fix-compile-problem-based-on-mountain-lion-and-xcode-4-dot-4/', null, 'width=615,height=505,toolbar=0,status=0')" class="sina-weibo" title="分享到新浪微博"></a>%>
+
+  <%#<a href="javascript:void(0)" onclick="window.open('http://share.v.t.qq.com/index.php?c=share&amp;a=index&amp;appkey=&amp;title=Fix Compile Problem Based on Mountain Lion and Xcode 4.4 - &amp;url=http://hansay.com/2012/08/02/fix-compile-problem-based-on-mountain-lion-and-xcode-4-dot-4/', null, 'width=700,height=680,toolbar=0,status=0')" class="tencent-weibo" title="分享到腾讯微博"></a>%>
+
+  <%#<a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=Fix Compile Problem Based on Mountain Lion and Xcode 4.4 - http://hansay.com/2012/08/02/fix-compile-problem-based-on-mountain-lion-and-xcode-4-dot-4/', null, 'width=600,height=300,toolbar=0,status=0')" class="twitter" title="分享到Twitter"></a>%>
+  <%#</span>%>
+
+</p>

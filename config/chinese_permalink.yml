@@ -1,0 +1,4 @@
+bing:
+  client_id: 'destinyd-blog'
+  client_secret: 'YCyXpNr+X3cwQ0yGBR4OiU49UOSg/Tv+/0LZ4ZMFW4s='
+  language: zh-cht # (chinese traditional, default is zh-chs, chinese simplified)

@@ -19,3 +19,5 @@ gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'rails_kindeditor', '~> 0.3.0'
 gem 'inherited_resources'
 gem 'acts-as-taggable-on'#, '~>2.1.0'
+gem 'chinese_permalink',git: 'git://github.com/flyerhzm/chinese_permalink.git'
+gem 'debugger'
