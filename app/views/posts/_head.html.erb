@@ -2,7 +2,7 @@
   <%= link_to post.title,post.to_permalink %>
 </h1>
 <p class="meta">
-<time datetime="<%= post.created_at %>" pubdate="pubdate" data-updated="true"><%= post.created_at.to_s(:short) %></time>
+<time datetime="<%= post.created_at %>" pubdate="pubdate" data-updated="true"><%= post.created_at.to_s(:long) %></time>
 <span class="tags">
   <% post.tags.each do |tag| %>
     <a class="category" href="/blog/categories/<%= tag %>"><%= tag %></a>

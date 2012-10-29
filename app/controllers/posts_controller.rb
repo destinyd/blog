@@ -3,7 +3,6 @@ class PostsController < InheritedResources::Base
 
   def tag
     @posts = Post.tagged_with(params[:id])
-    render :index
   end
   
   def archives

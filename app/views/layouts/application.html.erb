@@ -20,8 +20,18 @@
     </nav>
     <header class="my-nickname"><em title="">DestinyD</em></header>
     <section class="main-wrap clearfix">
+    <article role="article">
+    <% if content_for?(:header) or content_for(:title) %>
+    <header>
+    <% if content_for? :title %>
+      <h1 class="page-title"><%= yield(:title) %></h1>
+    <% end -%>
+    <%= yield(:header) %>
+    </header>
+    <% end -%>
     <%#= render 'layouts/messages' %>
     <%= yield %>
+    </article>
     </section>
     <footer class="footer">
     &copy;2012 DestinyD

@@ -1,0 +1,6 @@
+<% posts.each do |post| %>
+  <article>
+    <%= render "posts/head",post:post %>
+    <%= render "posts/body_cut",post:post %>
+  </article>
+<% end -%>

@@ -1,13 +1,5 @@
-<% if action_name == 'tag' %>
-<h1>Tag <%= params[:id] %> blogs</h1>
-<% end -%>
+<%= render "posts/posts",posts:@posts %>
 
-<% @posts.each do |post| %>
-  <article>
-    <%= render "posts/head",post:post %>
-    <%= render "posts/body_cut",post:post %>
-  </article>
-<% end -%>
 <nav class="align-r">
 <%= will_paginate(@posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
 </nav>
