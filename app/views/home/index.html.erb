@@ -1,9 +1,0 @@
-<% @posts.each do |post| %>
-  <article>
-  <header>
-  <%= render "posts/head",post:post %>
-  <header>
-  <%= render "posts/body_cut",post:post %>
-  </article>
-<% end -%>
-<%= will_paginate(@posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>

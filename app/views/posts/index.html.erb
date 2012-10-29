@@ -8,4 +8,6 @@
   </article>
   <%= render "posts/body_cut",post:post %>
 <% end -%>
+<nav>
 <%= will_paginate(@posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+</nav>
