@@ -1,7 +1,11 @@
+<% if action_name == 'tag' %>
 <h1>Tag <%= params[:id] %> blogs</h1>
+<% end -%>
 
 <% @posts.each do |post| %>
   <article>
     <%= render "posts/head",post:post %>
   </article>
+  <%= render "posts/body_cut",post:post %>
 <% end -%>
+<%= will_paginate(@posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>

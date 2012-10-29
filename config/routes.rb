@@ -11,6 +11,9 @@ Blog::Application.routes.draw do
     get "blog/archives" => "posts#archives",as: :blog_archives
     match "/blog/:year/:month/:day/:id" => 'posts#show'
     match "/blog/categories/:id" => 'posts#tag'
-    root :to => "home#index",as: :home
+    match "/blog/page/:page" => 'posts#index', constraints: {
+      page: /[23456789]|\d{2,}/
+    }
+    root :to => "posts#index",as: :home,page: 1
   end
 end

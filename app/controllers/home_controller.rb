@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.scoped
+    @posts = Post.recent.paginate(page: params[:page])
   end
 end

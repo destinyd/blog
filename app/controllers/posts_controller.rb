@@ -1,10 +1,18 @@
 class PostsController < InheritedResources::Base
   defaults finder: :find_by_permalink!
-  custom_actions collection: [:archives,:tag]
 
   def tag
     @posts = Post.tagged_with(params[:id])
     render :index
+  end
+  
+  def archives
+    @posts = Post.archives
+  end
+
+  protected
+  def collection
+    @posts ||= end_of_association_chain.recent.paginate(page: params[:page])
   end
 
   #def archives

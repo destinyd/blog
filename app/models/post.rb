@@ -3,7 +3,9 @@ class Post < ActiveRecord::Base
   attr_accessible :body, :title, :tag_list
   #acts_as_commentable
   acts_as_taggable
-  scope :archives,select([:title,:created_at])
+  scope :recent,order('id desc')
+  scope :archives,recent.select([:title,:created_at,:permalink])
+
   def to_permalink
     "/blog/#{created_at.year}/#{created_at.month}/#{created_at.day}/#{permalink}"
   end

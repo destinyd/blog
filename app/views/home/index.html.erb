@@ -6,3 +6,4 @@
   <%= render "posts/body_cut",post:post %>
   </article>
 <% end -%>
+<%= will_paginate(@posts, :renderer => WillPaginate::ActionView::LinkRenderer) %>
