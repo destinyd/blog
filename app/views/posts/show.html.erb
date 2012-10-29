@@ -6,8 +6,9 @@
   <%= raw @post.body %>
 </div>
 <footer>
-  <p class="meta neighbor clearfix">
-    <a href="/2012/08/01/installing-postgresql-failed-via-homebrew-on-mountain-lion/" class="float-l" title="Previous Post: Installing Postgresql Failed Via Homebrew on Mountain Lion">« Installing Postgresql Failed Via Homebrew on Mountain Lion</a>
-  </p>
-</footer>
+      <p class="meta neighbor clearfix">
+        <%= link_to @post.prev,@post.prev.to_permalink,class: 'float-l',title:@post.prev if @post.prev %>
+        <%= link_to @post.next,@post.next.to_permalink,class: 'float-r',title:@post.next if @post.next %>
+      </p>
+    </footer>
 </article>

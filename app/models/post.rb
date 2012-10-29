@@ -7,6 +7,18 @@ class Post < ActiveRecord::Base
   scope :archives,recent.select([:title,:created_at,:permalink])
   default_scope includes(:tags)
 
+  def to_s
+    title
+  end
+
+  def next
+    @next ||= Post.order(:id).where('id > ?',self.id).first || false
+  end
+
+  def prev
+    @prev ||= Post.order('id desc').where('id < ?',self.id).first || false
+  end
+
   def to_permalink
     "/blog/#{created_at.year}/#{created_at.month}/#{created_at.day}/#{permalink}"
   end
