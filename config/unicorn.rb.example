@@ -8,7 +8,9 @@
 
 app_path = "/usr/local/myproject"
 
-listen 2007 # by default Unicorn listens on port 8080
+# Listen on fs socket for better performance
+listen "#{app_path}/tmp/sockets/unicorn.sock", :backlog => 64
+#listen 2007 # by default Unicorn listens on port 8080
 worker_processes 2 # this should be >= nr_cpus
 pid "#{app_path}/tmp/pids/unicorn.pid"
 stderr_path "#{app_path}/log/unicorn.log"
