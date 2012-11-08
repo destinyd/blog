@@ -1,6 +1,6 @@
-<header>
-<h1>Blog Archives</h1>
-</header>
+<% content_for :title do -%>
+Blog Archives
+<% end -%>
 <dl class="archives">
 <% @posts.group_by{|post| post.created_at.year}.each do |year,posts| %>
   <dt>
