@@ -1,4 +1,5 @@
 class Admin::PostsController < InheritedResources::Base
+  before_filter :admin?
   def create
     create!{post_url(@post)}
   end
