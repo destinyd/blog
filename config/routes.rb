@@ -14,7 +14,7 @@ Blog::Application.routes.draw do
     #resources :posts
     get "about" => 'home#about',as: :about
     get "blog/archives" => "posts#archives",as: :blog_archives
-    match "/blog/:year/:month/:day/:id" => 'posts#show'
+    match "/blog/:year/:month/:day/:id" => 'posts#show',as: :blog
     match "/blog/categories/:id" => 'posts#tag',as: :category
     match "/blog/page/:page" => 'posts#index', constraints: {
       page: /[23456789]|\d{2,}/
