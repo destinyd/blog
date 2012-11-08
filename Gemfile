@@ -6,7 +6,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
-gem "thin", ">= 1.5.0", group: :production
+#gem "thin", ">= 1.5.0", group: :production
+gem "unicorn", group: :production
 gem "mysql2", ">= 0.3.11"
 gem "rspec-rails", ">= 2.11.4", group: [:development, :test]
 gem "email_spec", ">= 1.2.1", group: :test
