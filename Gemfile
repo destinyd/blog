@@ -23,5 +23,5 @@ gem 'acts-as-taggable-on'#, '~>2.1.0'
 #gem 'chinese_permalink',git: 'git://github.com/flyerhzm/chinese_permalink.git'
 gem 'debugger',group: :development
 gem 'bootstrap-will_paginate'
-gem 'truncate_html'
+gem 'truncate_html',git: 'git://github.com/destinyd/truncate_html.git'
 gem 'ruby-pinyin', git: 'git://github.com/janx/ruby-pinyin.git'
